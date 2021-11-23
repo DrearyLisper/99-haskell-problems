@@ -46,5 +46,14 @@ p08 (x:y:xs) | x == y = p08 (y:xs)
              | otherwise = x : p08 (y:xs)
 
 
+p09 :: Eq a => [a] -> [[a]]
+p09 ys = inner ys []
+  where
+    inner [] group = [p05 group]
+    inner [x] group = [p05 $ x:group]
+    inner (x:y:xs) group | x == y = inner (y:xs) (x:group)
+                         | otherwise = (p05 (x:group)) : (inner (y:xs) [])
+
+
 main :: IO()
 main = print "Hello, world"
