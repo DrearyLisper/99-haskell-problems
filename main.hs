@@ -32,5 +32,12 @@ p05 = inner []
 p06 :: Eq a => [a] -> Bool
 p06 xs = xs == p05 xs
 
+
+data NestedList a = Elem a | List [NestedList a]
+p07 :: NestedList a -> [a]
+p07 (Elem x) = [x]
+p07 (List xs) = foldl (\l r -> l ++ p07 r) [] xs
+
+
 main :: IO()
 main = print "Hello, world"

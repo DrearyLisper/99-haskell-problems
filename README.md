@@ -60,3 +60,15 @@ True
 True
 ```
 
+## Problem 07
+(**) Flatten a nested list structure.
+
+``` haskell
+*Main> p07 (Elem 5)
+[5]
+*Main> p07 (List [Elem 1, List [Elem 2, List [Elem 3, Elem 4], Elem 5]])
+[1,2,3,4,5]
+*Main> p07 (List [])
+[]
+```
+
