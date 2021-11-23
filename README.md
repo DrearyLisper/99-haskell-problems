@@ -72,3 +72,11 @@ True
 []
 ```
 
+## Problem 08
+(**) Eliminate consecutive duplicates of list elements.
+
+``` haskell
+*Main> p08 "aaaabccaadeeee"
+"abcade"
+```
+

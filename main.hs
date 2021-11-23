@@ -39,5 +39,12 @@ p07 (Elem x) = [x]
 p07 (List xs) = foldl (++) [] $ map p07 xs
 
 
+p08 :: Eq a => [a] -> [a]
+p08 [] = []
+p08 [x] = [x]
+p08 (x:y:xs) | x == y = p08 (y:xs)
+             | otherwise = x : p08 (y:xs)
+
+
 main :: IO()
 main = print "Hello, world"
