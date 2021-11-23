@@ -70,5 +70,15 @@ p12 xs = foldr (++) [] $ map unpack xs
     unpack (Single x)     = [x]
     unpack (Multiple n x) = take n $ repeat x
 
+p13 :: Eq a => [a] -> [RLE a]
+p13 ys = inner ys 0
+  where
+    inner [] _ = []
+    inner [x] n | n > 1     = [Multiple n x]
+                | otherwise = [Single x]
+    inner (x:y:xs) n | x == y    = inner (y:xs) (n+1)
+                     | n > 0     = (Multiple (n + 1) x) : inner (y:xs) 0
+                     | otherwise = (Single x) : inner (y:xs) 0
+
 main :: IO()
 main = print "Hello, world"
