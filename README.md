@@ -1,6 +1,6 @@
 # Solving 99 Haskell Problems 
 
-Use ```:l main.hs``` in ghci to load all functions that solves problems.
+Use ```:l main.hs``` in ghci to load all functions that solve problems.
 
 ## Problem 01
 (*) Find the last element of a list.
@@ -46,5 +46,15 @@ Use ```:l main.hs``` in ghci to load all functions that solves problems.
 3
 *Main> p04 "Hello, world!"
 13
+```
+
+## Problem 05
+(*) Reverse a list.
+
+``` haskell
+*Main> p05 "A man, a plan, a canal, panama!"
+"!amanap ,lanac a ,nalp a ,nam A"
+*Main> p05 [1,2,3,4]
+[4,3,2,1]
 ```
 

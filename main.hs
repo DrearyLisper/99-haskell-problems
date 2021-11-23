@@ -23,6 +23,12 @@ p04 :: [a] -> Integer
 p04 [] = 0
 p04 (_:xs) = 1 + p04 xs
 
+p05 :: [a] -> [a]
+p05 = inner []
+  where
+    inner r [] = r
+    inner r (x:xs) = inner (x:r) xs
+
 
 main :: IO()
 main = print "Hello, world"
