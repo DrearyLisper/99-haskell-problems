@@ -54,6 +54,8 @@ p09 ys = inner ys []
     inner (x:y:xs) group | x == y = inner (y:xs) (x:group)
                          | otherwise = (p05 (x:group)) : (inner (y:xs) [])
 
+p10 :: Eq a => [a] -> [(Integer, a)]
+p10 = map (\x -> (p04 x, head x)) . p09
 
 main :: IO()
 main = print "Hello, world"
