@@ -1,6 +1,6 @@
 # Solving 99 Haskell Problems 
 
-Use ```:l main.hs ``` in ghci to load all functions that solves problems.
+Use ```:l main.hs``` in ghci to load all functions that solves problems.
 
 ## Problem 01
 (*) Find the last element of a list.
