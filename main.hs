@@ -64,5 +64,11 @@ p11 = map pack . p09
     pack x | length x > 1 = Multiple (length x) (head x)
            | otherwise    = Single (head x)
 
+p12 :: [RLE a] -> [a]
+p12 xs = foldr (++) [] $ map unpack xs
+  where
+    unpack (Single x)     = [x]
+    unpack (Multiple n x) = take n $ repeat x
+
 main :: IO()
 main = print "Hello, world"
