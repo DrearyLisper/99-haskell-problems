@@ -54,8 +54,10 @@ p09 ys = inner ys []
     inner (x:y:xs) group | x == y = inner (y:xs) (x:group)
                          | otherwise = (p05 (x:group)) : (inner (y:xs) [])
 
+
 p10 :: Eq a => [a] -> [(Integer, a)]
 p10 = map (\x -> (p04 x, head x)) . p09
+
 
 data RLE a = Multiple Int a | Single a deriving Show
 p11 :: Eq a => [a] -> [RLE a]
@@ -64,11 +66,13 @@ p11 = map pack . p09
     pack x | length x > 1 = Multiple (length x) (head x)
            | otherwise    = Single (head x)
 
+
 p12 :: [RLE a] -> [a]
 p12 xs = foldr (++) [] $ map unpack xs
   where
     unpack (Single x)     = [x]
     unpack (Multiple n x) = take n $ repeat x
+
 
 p13 :: Eq a => [a] -> [RLE a]
 p13 ys = inner ys 0
@@ -80,8 +84,14 @@ p13 ys = inner ys 0
                      | n > 0     = (Multiple (n + 1) x) : inner (y:xs) 0
                      | otherwise = (Single x) : inner (y:xs) 0
 
+
 p14 :: [a] -> [a]
 p14 xs = foldl (++) [] (map (\x -> [x, x]) xs)
+
+
+p15 :: [a] -> Int -> [a]
+p15 xs n = foldl (++) [] (map (take n . repeat) xs)
+
 
 main :: IO()
 main = print "Hello, world"

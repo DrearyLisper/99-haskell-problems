@@ -152,3 +152,11 @@ Implement the so-called run-length encoding data compression method directly. I.
 [1,1,2,2,3,3]
 ```
 
+## Problem 15
+
+(**) Replicate the elements of a list a given number of times.
+
+``` haskell
+*Main> p15 "abc" 3
+"aaabbbccc"
+```
