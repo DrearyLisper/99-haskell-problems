@@ -36,7 +36,7 @@ p06 xs = xs == p05 xs
 data NestedList a = Elem a | List [NestedList a]
 p07 :: NestedList a -> [a]
 p07 (Elem x) = [x]
-p07 (List xs) = foldl (\l r -> l ++ p07 r) [] xs
+p07 (List xs) = foldl (++) [] $ map p07 xs
 
 
 main :: IO()
