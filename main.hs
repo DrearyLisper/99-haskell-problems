@@ -29,6 +29,8 @@ p05 = inner []
     inner r [] = r
     inner r (x:xs) = inner (x:r) xs
 
+p06 :: Eq a => [a] -> Bool
+p06 xs = xs == p05 xs
 
 main :: IO()
 main = print "Hello, world"

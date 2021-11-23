@@ -28,16 +28,6 @@ Use ```:l main.hs``` in ghci to load all functions that solve problems.
 'e'
 ```
 
-## Problem 03
-(*) Find the K'th element of a list. The first element in the list is number 1.
-
-``` haskell
-*Main> p03 [1, 2, 3] 2
-2
-*Main> p03 "haskell" 5
-'e'
-```
-
 ## Problem 04
 (*) Find the number of elements of a list.
 
@@ -56,5 +46,17 @@ Use ```:l main.hs``` in ghci to load all functions that solve problems.
 "!amanap ,lanac a ,nalp a ,nam A"
 *Main> p05 [1,2,3,4]
 [4,3,2,1]
+```
+
+## Problem 06
+(*) Find out whether a list is a palindrome. A palindrome can be read forward or backward; e.g. (x a m a x).
+
+``` haskell
+*Main> p06 [1,2,3]
+False
+*Main> p06 "madamimadam"
+True
+*Main> p06 [1,2,4,8,16,8,4,2,1]
+True
 ```
 
