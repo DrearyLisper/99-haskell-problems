@@ -3,6 +3,7 @@
 Use ```:l main.hs``` in ghci to load all functions that solve problems.
 
 ## Problem 01
+
 (*) Find the last element of a list.
 
 ``` haskell
@@ -11,6 +12,7 @@ Use ```:l main.hs``` in ghci to load all functions that solve problems.
 ```
 
 ## Problem 02
+
 (*) Find the last but one element of a list.
 
 ``` haskell
@@ -19,6 +21,7 @@ Use ```:l main.hs``` in ghci to load all functions that solve problems.
 ```
 
 ## Problem 03
+
 (*) Find the K'th element of a list. The first element in the list is number 1.
 
 ``` haskell
@@ -29,6 +32,7 @@ Use ```:l main.hs``` in ghci to load all functions that solve problems.
 ```
 
 ## Problem 04
+
 (*) Find the number of elements of a list.
 
 ``` haskell
@@ -39,6 +43,7 @@ Use ```:l main.hs``` in ghci to load all functions that solve problems.
 ```
 
 ## Problem 05
+
 (*) Reverse a list.
 
 ``` haskell
@@ -49,6 +54,7 @@ Use ```:l main.hs``` in ghci to load all functions that solve problems.
 ```
 
 ## Problem 06
+
 (*) Find out whether a list is a palindrome. A palindrome can be read forward or backward; e.g. (x a m a x).
 
 ``` haskell
@@ -61,7 +67,10 @@ True
 ```
 
 ## Problem 07
+
 (**) Flatten a nested list structure.
+
+Transform a list, possibly holding lists as elements into a `flat' list by replacing each list with its elements (recursively).
 
 ``` haskell
 *Main> p07 (Elem 5)
@@ -73,7 +82,10 @@ True
 ```
 
 ## Problem 08
+
 (**) Eliminate consecutive duplicates of list elements.
+
+If a list contains repeated elements they should be replaced with a single copy of the element. The order of the elements should not be changed.
 
 ``` haskell
 *Main> p08 "aaaabccaadeeee"
@@ -81,6 +93,7 @@ True
 ```
 
 ## Problem 09
+
 (**) Pack consecutive duplicates of list elements into sublists. If a list contains repeated elements they should be placed in separate sublists.
 
 ``` haskell
@@ -89,7 +102,19 @@ True
 ```
 
 ## Problem 10
-(*) Run-length encoding of a list. Use the result of problem P09 to implement the so-called run-length encoding data compression method. Consecutive duplicates of elements are encoded as lists 
+
+(*) Run-length encoding of a list. Use the result of problem P09 to implement the so-called run-length encoding data compression method. Consecutive duplicates of elements are encoded as lists (N E) where N is the number of duplicates of the element E.
+
+``` haskell
+*Main> p10 "aaaabccaadeeee"
+[(4,'a'),(1,'b'),(2,'c'),(2,'a'),(1,'d'),(4,'e')]
+```
+
+## Problem 11
+
+(*) Modified run-length encoding.
+
+Modify the result of problem 10 in such a way that if an element has no duplicates it is simply copied into the result list. Only elements with duplicates are transferred as (N E) lists.
 
 ``` haskell
 *Main> p10 "aaaabccaadeeee"

@@ -57,5 +57,12 @@ p09 ys = inner ys []
 p10 :: Eq a => [a] -> [(Integer, a)]
 p10 = map (\x -> (p04 x, head x)) . p09
 
+data RLE a = Multiple Int a | Single a deriving Show
+p11 :: Eq a => [a] -> [RLE a]
+p11 = map pack . p09
+  where
+    pack x | length x > 1 = Multiple (length x) (head x)
+           | otherwise    = Single (head x)
+
 main :: IO()
 main = print "Hello, world"
