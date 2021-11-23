@@ -80,5 +80,8 @@ p13 ys = inner ys 0
                      | n > 0     = (Multiple (n + 1) x) : inner (y:xs) 0
                      | otherwise = (Single x) : inner (y:xs) 0
 
+p14 :: [a] -> [a]
+p14 xs = foldl (++) [] (map (\x -> [x, x]) xs)
+
 main :: IO()
 main = print "Hello, world"

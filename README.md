@@ -142,3 +142,13 @@ Implement the so-called run-length encoding data compression method directly. I.
 *Main> p13 "aaaabccaadeeee"
 [Multiple 4 'a',Single 'b',Multiple 2 'c',Multiple 2 'a',Single 'd',Multiple 3 'e']
 ```
+
+## Problem 14
+
+(*) Duplicate the elements of a list.
+
+``` haskell
+*Main> p14 [1, 2, 3]
+[1,1,2,2,3,3]
+```
+
