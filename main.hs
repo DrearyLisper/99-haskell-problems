@@ -93,5 +93,12 @@ p15 :: [a] -> Int -> [a]
 p15 xs n = foldl (++) [] (map (take n . repeat) xs)
 
 
+p16 :: [a] -> Int -> [a]
+p16 ys y = inner ys y y
+  where
+    inner [] _ _ = []
+    inner (x:xs) n c | c == 1 = inner xs n n
+                     | otherwise = x : inner xs n (c - 1)
+
 main :: IO()
 main = print "Hello, world"

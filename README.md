@@ -160,3 +160,12 @@ Implement the so-called run-length encoding data compression method directly. I.
 *Main> p15 "abc" 3
 "aaabbbccc"
 ```
+
+## Problem 16
+
+(**) Drop every N'th element from a list.
+
+``` haskell
+*Main> p16 "abcdefghik" 3
+"abdeghk"
+```
