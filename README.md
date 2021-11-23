@@ -117,6 +117,6 @@ If a list contains repeated elements they should be replaced with a single copy 
 Modify the result of problem 10 in such a way that if an element has no duplicates it is simply copied into the result list. Only elements with duplicates are transferred as (N E) lists.
 
 ``` haskell
-*Main> p10 "aaaabccaadeeee"
-[(4,'a'),(1,'b'),(2,'c'),(2,'a'),(1,'d'),(4,'e')]
+*Main> p11 "aaaabccaadeeee"
+[Multiple 4 'a',Single 'b',Multiple 2 'c',Multiple 2 'a',Single 'd',Multiple 4 'e']
 ```
