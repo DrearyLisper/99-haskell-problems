@@ -18,3 +18,13 @@ Use ```:l main.hs``` in ghci to load all functions that solves problems.
 3
 ```
 
+## Problem 03
+(*) Find the K'th element of a list. The first element in the list is number 1.
+
+``` haskell
+*Main> p03 [1, 2, 3] 2
+2
+*Main> p03 "haskell" 5
+'e'
+```
+
