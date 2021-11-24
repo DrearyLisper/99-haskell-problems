@@ -203,4 +203,11 @@ Hint: Use the predefined functions length and (++).
 "ghabcdef"
 ```
 
+## Problem 20
 
+(*) Remove the K'th element from a list.
+
+``` haskell
+*Main> p20 2 "abcd"
+('b',"acd")
+```

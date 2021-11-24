@@ -124,10 +124,19 @@ p18 ys from to = drop' from . take' to $ ys
     takeInner' _ [] _ = error "Empty list"
     takeInner' n (x:xs) zs = takeInner' (n-1) xs (x:zs)
 
+
 p19 :: [a] -> Int -> [a]
 p19 xs n = r ++ l
   where
     (l, r) = p17 xs ((n + length xs) `mod` length xs)
+
+
+p20 :: Int -> [a] -> (a, [a])
+p20 n xs = inner n [] xs
+  where
+    inner 1 ys (z:zs) = (z, (reverse ys) ++ zs)
+    inner _ _ [] = error "Out of bounds"
+    inner c ys (z:zs) = inner (c-1) (z:ys) zs
 
 main :: IO()
 main = print "Hello, world"
