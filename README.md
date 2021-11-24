@@ -178,3 +178,14 @@ Implement the so-called run-length encoding data compression method directly. I.
 *Main> p17 "abcdefghik" 3
 ("abc","defghik")
 ```
+
+## Problem 18
+
+(**) Extract a slice from a list.
+
+Given two indices, i and k, the slice is the list containing the elements between the i'th and k'th element of the original list (both limits included). Start counting the elements with 1.
+
+``` haskell
+*Main> p18 ['a','b','c','d','e','f','g','h','i','k'] 3 7
+"cdefg"
+```

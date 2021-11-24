@@ -108,5 +108,21 @@ p17 ys c = inner [] ys c
     inner left (x:xs) n | n == 0 = (reverse left, x:xs)
                         | otherwise = inner (x:left) xs (n - 1)
 
+
+p18 :: [a] -> Int -> Int -> [a]
+p18 ys from to = drop' from . take' to $ ys
+  where
+    drop' :: Int -> [a] -> [a]
+    drop' 1 xs = xs
+    drop' _ [] = error "Empty list"
+    drop' n (_:xs) = drop' (n-1) xs
+
+    take' :: Int -> [a] -> [a]
+    take' n xs = takeInner' n xs []
+    takeInner' :: Int -> [a] -> [a] -> [a]
+    takeInner' 0 _ zs = reverse $ zs
+    takeInner' _ [] _ = error "Empty list"
+    takeInner' n (x:xs) zs = takeInner' (n-1) xs (x:zs)
+
 main :: IO()
 main = print "Hello, world"
