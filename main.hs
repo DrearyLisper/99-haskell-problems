@@ -100,5 +100,13 @@ p16 ys y = inner ys y y
     inner (x:xs) n c | c == 1 = inner xs n n
                      | otherwise = x : inner xs n (c - 1)
 
+
+p17 :: [a] -> Int -> ([a], [a])
+p17 ys c = inner [] ys c
+  where
+    inner left [] _ = (left, [])
+    inner left (x:xs) n | n == 0 = (reverse left, x:xs)
+                        | otherwise = inner (x:left) xs (n - 1)
+
 main :: IO()
 main = print "Hello, world"

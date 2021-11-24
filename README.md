@@ -169,3 +169,12 @@ Implement the so-called run-length encoding data compression method directly. I.
 *Main> p16 "abcdefghik" 3
 "abdeghk"
 ```
+
+## Problem 17
+
+(*) Split a list into two parts; the length of the first part is given.
+
+``` haskell
+*Main> p17 "abcdefghik" 3
+("abc","defghik")
+```
