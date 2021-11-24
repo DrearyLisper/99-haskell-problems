@@ -189,3 +189,18 @@ Given two indices, i and k, the slice is the list containing the elements betwee
 *Main> p18 ['a','b','c','d','e','f','g','h','i','k'] 3 7
 "cdefg"
 ```
+
+## Problem 19
+
+(**) Rotate a list N places to the left.
+
+Hint: Use the predefined functions length and (++).
+
+``` haskell
+*Main> p19 ['a','b','c','d','e','f','g','h'] 3
+"defghabc"
+*Main> p19 ['a','b','c','d','e','f','g','h'] (-2)
+"ghabcdef"
+```
+
+
