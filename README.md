@@ -221,4 +221,14 @@ Insert an element at a given position into a list.
 "aXbcd"
 ```
 
+## Problem 22
+
+Insert an element at a given position into a list.
+
+``` haskell
+*Main> p22 4 9
+[4,5,6,7,8,9]
+```
+
+
 

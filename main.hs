@@ -147,5 +147,8 @@ p21 j zs i = inner j [] zs i
     inner e xs [] _ = reverse (e:xs)
     inner e xs (y:ys) n = inner e (y:xs) ys (n-1)
 
+p22 :: Int -> Int -> [Int]
+p22 l r = [l..r]
+
 main :: IO()
 main = print "Hello, world"
