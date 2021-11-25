@@ -138,5 +138,14 @@ p20 n xs = inner n [] xs
     inner _ _ [] = error "Out of bounds"
     inner c ys (z:zs) = inner (c-1) (z:ys) zs
 
+
+p21 :: a -> [a] -> Int -> [a]
+p21 j zs i = inner j [] zs i
+  where
+    inner :: a -> [a] -> [a] -> Int -> [a]
+    inner e xs (y:ys) 1 = (reverse xs) ++ e : y : ys
+    inner e xs [] _ = reverse (e:xs)
+    inner e xs (y:ys) n = inner e (y:xs) ys (n-1)
+
 main :: IO()
 main = print "Hello, world"

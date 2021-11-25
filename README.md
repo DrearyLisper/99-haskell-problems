@@ -211,3 +211,14 @@ Hint: Use the predefined functions length and (++).
 *Main> p20 2 "abcd"
 ('b',"acd")
 ```
+
+## Problem 21
+
+Insert an element at a given position into a list.
+
+``` haskell
+*Main> p21 'X' "abcd" 2
+"aXbcd"
+```
+
+
