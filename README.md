@@ -230,5 +230,15 @@ Insert an element at a given position into a list.
 [4,5,6,7,8,9]
 ```
 
+## Problem 23
 
+Extract a given number of randomly selected elements from a list.
 
+``` haskell
+*Main> p23 "abcdefgh" 3
+"aef"
+*Main> p23 "abcdefgh" 3
+"dfe"
+*Main> p23 "abcdefgh" 3
+"cge"
+```

@@ -1,5 +1,8 @@
 module Main where
 
+import System.Random
+import Data.Array
+
 p01 :: [a] -> a
 p01 [] = error "List cannot be empty"
 p01 [x] = x
@@ -147,8 +150,31 @@ p21 j zs i = inner j [] zs i
     inner e xs [] _ = reverse (e:xs)
     inner e xs (y:ys) n = inner e (y:xs) ys (n-1)
 
+
 p22 :: Int -> Int -> [Int]
 p22 l r = [l..r]
+
+p23 :: [a] -> Int -> IO [a]
+p23 items n = do
+    g <- newStdGen
+    a <- shuffle (array (0, (length items) - 1) $ zip [0..] items) 0 (length items) g
+    return $ take n $ elems $ a
+      where
+        swap :: Array Int e -> Int -> Int -> Array Int e
+        swap a i j = a // [(i, jVal), (j, iVal)]
+          where
+            iVal = a ! i
+            jVal = a ! j
+
+        shuffle :: RandomGen g => Array Int e -> Int -> Int -> g -> IO (Array Int e)
+        shuffle a l r g | l == r = return a
+                        | otherwise = do
+          (swapIndex, newG) <- return $ (randomR (l, r - 1) g)
+          newA <- shuffle (swap a l swapIndex) (l+1) r newG
+          return newA
+
+
+
 
 main :: IO()
 main = print "Hello, world"
